@@ -1,10 +1,9 @@
 # GitHub API Client
 
-Python client for GitHub REST API with full CRUD operations for repositories.
+A professional Python client for GitHub REST API with full CRUD operations for repositories.
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-19%20passing-brightgreen)]()
 
 ---
 
@@ -31,7 +30,7 @@ Python client for GitHub REST API with full CRUD operations for repositories.
 
 ### 1. Clone the repository
 
-git clone https://github.com/your-username/github-api-client.git
+git clone https://github.com/Hold-My-Tea/github-api-client.git
 cd github-api-client
 
 ### 2. Create virtual environment (recommended)
@@ -161,35 +160,33 @@ pytest -m performance # Performance tests
 
 ### Generate Allure report
 
-# Run tests with Allure
 pytest tests/ --alluredir=allure-results
-
-# Serve Allure report
 allure serve allure-results
 
 ---
 
 ## Project Structure
 
-github_api_client/
-├── src/                              # Source code
-│   └── github_api_client/
-│       ├── __init__.py              # Package initialization
-│       ├── client.py                # GitHubAPIClient
-│       └── exceptions.py            # Custom exceptions
-├── tests/                            # Tests
-│   ├── __init__.py
-│   ├── conftest.py                  # Pytest fixtures
-│   └── test_client.py               # 19 test cases
-├── examples/                         # Usage examples
-│   └── basic_usage.py               # Basic CRUD example
-├── .env.example                      # Environment variables template
-├── .gitignore
-├── pytest.ini                        # Pytest configuration
-├── README.md                         # This file
-├── requirements.txt                  # Production dependencies
-├── requirements-dev.txt              # Development dependencies
-└── setup.py                          # Package installation
+📁 github_api_client/
+├── 📁 src/
+│   └── 📁 github_api_client/
+│       ├── 📄 __init__.py          # Package initialization
+│       ├── 📄 client.py            # GitHubAPIClient
+│       └── 📄 exceptions.py        # Custom exceptions
+├── 📁 tests/
+│   ├── 📄 __init__.py
+│   ├── 📄 conftest.py              # Pytest fixtures
+│   └── 📄 test_client.py           # 19 test cases
+├── 📁 examples/
+│   └── 📄 basic_usage.py           # Basic CRUD example
+├── 📄 .env.example                  # Environment variables template
+├── 📄 .gitignore                    # Ignored files
+├── 📄 LICENSE                       # MIT License
+├── 📄 pytest.ini                    # Pytest configuration
+├── 📄 README.md                     # This file
+├── 📄 requirements.txt              # Production dependencies
+├── 📄 requirements-dev.txt          # Development dependencies
+└── 📄 setup.py                      # Package installation
 
 ---
 
