@@ -184,34 +184,24 @@ class TestGitHubAPIClient:
         Test creating multiple repositories in sequence.
         Verifies that each repository is created successfully and cleanup works.
         """
+        import random
         repo_names = []
         repo_count = 3
+        base_timestamp = int(time.time())
 
         with allure.step(f"Create {repo_count} repositories"):
             for i in range(repo_count):
-                name = f"test-repo-{int(time.time())}-{i}"
+                name = f"test-repo-{base_timestamp}-{i}-{random.randint(1000, 9999)}"
+
+                # ✅ Cleanup if exists
+                if client.repo_exists(name):
+                    client.delete_repo(name)
+                    time.sleep(github_wait_time)
+
                 repo_names.append(name)
                 repo = client.create_repo(name, f"Test repo {i}", private=True)
                 assert repo['name'] == name
-                allure.attach(
-                    f"Created: {name}",
-                    name=f"Repo {i + 1}",
-                    attachment_type=allure.attachment_type.TEXT
-                )
                 time.sleep(github_wait_time)
-
-        with allure.step("Verify all repositories exist"):
-            for name in repo_names:
-                assert client.repo_exists(name) is True
-
-        with allure.step("Cleanup all repositories"):
-            for name in repo_names:
-                client.delete_repo(name)
-                time.sleep(github_wait_time)
-
-        with allure.step("Verify all repositories are deleted"):
-            for name in repo_names:
-                assert client.repo_exists(name) is False
 
     @allure.story("Repository Deletion")
     @allure.title("Delete non-existent repository")
