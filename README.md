@@ -172,24 +172,24 @@ allure serve allure-results
 ## Project Structure
 
 github_api_client/
-├── src/
+├── src/                              # Source code
 │   └── github_api_client/
-│       ├── __init__.py
-│       ├── client.py
-│       └── exceptions.py
-├── tests/
+│       ├── __init__.py              # Package initialization
+│       ├── client.py                # GitHubAPIClient
+│       └── exceptions.py            # Custom exceptions
+├── tests/                            # Tests
 │   ├── __init__.py
-│   ├── conftest.py
-│   └── test_client.py
-├── examples/
-│   └── basic_usage.py
-├── .env.example
+│   ├── conftest.py                  # Pytest fixtures
+│   └── test_client.py               # 19 test cases
+├── examples/                         # Usage examples
+│   └── basic_usage.py               # Basic CRUD example
+├── .env.example                      # Environment variables template
 ├── .gitignore
-├── pytest.ini
-├── README.md
-├── requirements.txt
-├── requirements-dev.txt
-└── setup.py
+├── pytest.ini                        # Pytest configuration
+├── README.md                         # This file
+├── requirements.txt                  # Production dependencies
+├── requirements-dev.txt              # Development dependencies
+└── setup.py                          # Package installation
 
 ---
 
