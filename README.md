@@ -53,6 +53,7 @@
 ├── 📄 requirements.txt              # Production dependencies
 ├── 📄 requirements-dev.txt          # Development dependencies
 └── 📄 setup.py                      # Package installation
+└── 📄 LICENSE                       # the MIT License
 
 ```
 ## 🚀 Quick Start
@@ -115,6 +116,10 @@ allure serve allure-results
 | **Negative** | Get non-existent, create with empty/too long name, update non-existent |
 | **Performance** | Create, get, update, delete speed tests |
 | **Total** | **19** tests |
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📬 Contacts
 - Author: Oksana Maier 
