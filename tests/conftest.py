@@ -2,8 +2,10 @@ import os
 import pytest
 import time
 from dotenv import load_dotenv
-from github_api_client import GitHubAPIClient
+from librt.random import random
 
+from github_api_client import GitHubAPIClient
+import random
 
 load_dotenv()
 
@@ -38,7 +40,7 @@ def client():
 @pytest.fixture
 def test_repo_name():
     """Generate unique test repository name."""
-    return f"test-repo-{int(time.time())}"
+    return f"test-repo-{int(time.time())}-{random.randint(1000, 9999)}"
 
 
 @pytest.fixture
