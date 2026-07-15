@@ -30,6 +30,8 @@ env/
 htmlcov/
 coverage.xml
 *.cover
+
+# Allure reports (specific, not all JSON files)
 allure-results/
 allure-report/
 
