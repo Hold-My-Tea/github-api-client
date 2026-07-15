@@ -5,6 +5,7 @@
 ![Allure](https://img.shields.io/badge/Allure-2.24.0-red?logo=allure)
 ![Requests](https://img.shields.io/badge/Requests-2.31.0-orange)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
+[![CI](https://github.com/Hold-My-Tea/github-api-client/actions/workflows/ci.yml/badge.svg)](https://github.com/Hold-My-Tea/github-api-client/actions/workflows/ci.yml)
 
 ## 📋 About
 
