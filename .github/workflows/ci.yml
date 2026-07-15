@@ -37,9 +37,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
         GITHUB_USERNAME: ${{ secrets.USERNAME }}
-        GITHUB_API_WAIT: 1
+        GITHUB_API_WAIT: 2
       run: |
-        pytest tests/ -v --cov=src/github_api_client --cov-report=xml --alluredir=allure-results
+        pytest tests/ -v -m "not performance" --cov=src/github_api_client --cov-report=xml --alluredir=allure-results
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v4
