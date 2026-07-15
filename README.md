@@ -87,7 +87,7 @@ env
 GITHUB_TOKEN=your_github_personal_access_token_here
 GITHUB_USERNAME=your_github_username_here
 ```
-## 🧪 Running tests
+## 🧪 Running Tests
 
 ```
 # Basic run
@@ -107,7 +107,7 @@ pytest --alluredir=allure-results
 allure serve allure-results
 ```
 
-### 📊 Test coverage
+### 📊 Test Coverage
 
 | Category | Tests |
 |----------|-------|
@@ -119,5 +119,5 @@ allure serve allure-results
 ## 📬 Contacts
 - Author: Oksana Maier 
 - GitHub: [@Hold-My-Tea](https://github.com/Hold-My-Tea) 
-- Project: [Hold-My-Tea/test_api_project](https://github.com/Hold-My-Tea/github-api-client)
+- Project: [Hold-My-Tea/github-api-client](https://github.com/Hold-My-Tea/github-api-client)
 
