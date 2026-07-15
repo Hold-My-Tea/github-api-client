@@ -7,11 +7,12 @@ setup(
     name="github-api-client",
     version="0.1.0",
     author="Hold-My-Tea",
-    author_email="your.email@example.com",
-    description="Professional GitHub REST API client with full CRUD operations",
+    author_email="oksanis.ono@gmail.com",
+    description="GitHub REST API client with full CRUD operations",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Hold-My-Tea/github-api-client",
+    license="MIT",  # ✅ Добавлено поле license
     package_dir={"": "src"},
     packages=find_packages(where="src"),
     classifiers=[
@@ -20,7 +21,7 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: MIT License",  # ✅ Уже есть
         "Operating System :: OS Independent",
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
