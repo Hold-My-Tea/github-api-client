@@ -2,8 +2,6 @@ import os
 import pytest
 import time
 from dotenv import load_dotenv
-from librt.random import random
-
 from github_api_client import GitHubAPIClient
 import random
 
