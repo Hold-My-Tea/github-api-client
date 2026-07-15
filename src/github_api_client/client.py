@@ -60,7 +60,7 @@ class GitHubAPIClient:
                     raise RateLimitError("Rate limit exceeded. Please wait.")
             raise GitHubAPIError(f"Forbidden: {response.text}", status_code)
         elif status_code == 404:
-            raise RepositoryNotFoundError(f"Repository not found", status_code)
+            raise RepositoryNotFoundError(f"Repository not found, status_code")
         elif status_code == 422:
             error_data = response.json() if response.text else None
             raise ValidationError("Validation failed", status_code, error_data)
