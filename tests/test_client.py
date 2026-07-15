@@ -6,7 +6,6 @@ Contains both positive and negative test cases.
 import pytest
 import time
 import allure
-import requests
 from github_api_client import RepositoryNotFoundError, ValidationError
 
 

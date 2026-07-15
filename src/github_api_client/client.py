@@ -1,6 +1,6 @@
 import requests
 import logging
-from typing import Optional, List, Dict, Any
+from typing import List, Dict, Any
 
 from .exceptions import (
     GitHubAPIError,
