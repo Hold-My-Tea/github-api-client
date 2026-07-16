@@ -11,7 +11,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  # ========== 1. БЕЗОПАСНОСТЬ ==========
   security:
     runs-on: ubuntu-latest
     steps:
@@ -40,7 +39,7 @@ jobs:
       - name: Check dev dependencies
         run: safety check -r requirements-dev.txt --full-report
 
-  # ========== 2. ЛИНТЕРЫ (быстро, без установки всех зависимостей) ==========
+
   lint:
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -61,11 +60,11 @@ jobs:
           flake8 src/github_api_client tests \
             --count --max-complexity=10 --max-line-length=127 --statistics
 
-  # ========== 3. ТЕСТЫ (на матрице OS и Python) ==========
+
   test:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
-    needs: [security, lint]   # ← Запускаются только после security и lint
+    needs: [security, lint]
     strategy:
       fail-fast: false
       matrix:
@@ -96,6 +95,7 @@ jobs:
           pip install -r requirements-dev.txt
 
       - name: Test with pytest
+        shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           GITHUB_USERNAME: ${{ secrets.USERNAME }}
@@ -129,12 +129,12 @@ jobs:
           path: coverage.xml
         if: always()
 
-  # ========== 4. ПРОВЕРКА СБОРКИ (build) ==========
+
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: [test]   # ← Запускается только после успешных тестов
-    if: github.event_name != 'pull_request'   # Не запускаем на PR, только на push
+    needs: [test]
+    if: github.event_name != 'pull_request'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -157,11 +157,11 @@ jobs:
           path: dist/
         if: always()
 
-  # ========== 5. НОЧНЫЕ PERFORMANCE-ТЕСТЫ ==========
+
   performance-tests:
     runs-on: ubuntu-latest
     timeout-minutes: 40
-    needs: [build]   # ← Запускается только после успешной сборки
+    needs: [build]
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
 
     steps:
